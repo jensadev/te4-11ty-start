@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>{{ meta.siteTitle }}</title>
     <link rel="stylesheet" href="{{ '/css/style.css' | url }}" />
 </head>
 <body>
+    {% include "./components/_nav.njk" %}
     <header>
         <h1>{{ title }}</h1>
     </header>
     <main>
     {{ content | safe }}
     </main>
+    {{ page | dump }}
 </body>
 </html>
