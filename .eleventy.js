@@ -1,10 +1,15 @@
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addWatchTarget("./src/sass/");
+    eleventyConfig.addWatchTarget("./src/sass/");
 
-  return {
-    dir: {
-      input: "src",
-      output: "public",
-    },
-  };
+    // https://www.11ty.dev/docs/copy/
+    // https://www.11ty.dev/docs/plugins/image/
+
+    eleventyConfig.addPassthroughCopy('./src/images');
+
+    return {
+        dir: {
+        input: "src",
+        output: "public",
+        },
+    };
 };
